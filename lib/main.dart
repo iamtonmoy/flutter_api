@@ -1,4 +1,4 @@
-import 'package:apitutorials/home_screen.dart';
+import 'package:apitutorials/bottom_navigation.dart';
 import 'package:apitutorials/provider/authProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: const HomScreen(),
+      home: const BottomNavBar(),
     );
   }
 }

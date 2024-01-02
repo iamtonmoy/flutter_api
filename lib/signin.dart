@@ -123,7 +123,7 @@ class _SignInState extends State<SignIn> {
               validator: (value) {
                 if (value == value!.isEmpty && submitClicked) {
                   return 'Email is required';
-                } else if (!_isValidEmail(value)) {
+                } else if (value!.isEmpty && !_isValidEmail(value) && submitClicked) {
                   return 'Enter a valid email address';
                 }
                 return null;
@@ -199,7 +199,7 @@ class _SignInState extends State<SignIn> {
   Widget _buildTextField(String hintText, TextEditingController controller, TextInputType keyboardType, {bool obscureText = false, String? Function(String?)? validator, String? labelText}) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -209,6 +209,7 @@ class _SignInState extends State<SignIn> {
             obscureText: obscureText,
             validator: validator,
             decoration: InputDecoration(
+              contentPadding: EdgeInsets.all(12),
               labelText: labelText ?? hintText,
               errorText: validator != null ? validator(controller.text) : null,
               border: OutlineInputBorder(),

@@ -27,7 +27,6 @@ class AuthProvider with ChangeNotifier {
         handleLoginError(response.statusCode, response.body);
       }
     } catch (e) {
-      // Handle network errors
       print('Network error: $e');
     }
   }
