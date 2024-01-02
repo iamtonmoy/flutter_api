@@ -1,12 +1,6 @@
-
-import 'dart:convert';
-
-import 'package:apitutorials/Models/posts_model.dart';
 import 'package:apitutorials/getapi/get_api_screen.dart';
 import 'package:apitutorials/postapi/post_api_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 import 'getapi/drop_down_api.dart';
 
@@ -18,8 +12,6 @@ class HomScreen extends StatefulWidget {
 }
 
 class _HomScreenState extends State<HomScreen> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +22,9 @@ class _HomScreenState extends State<HomScreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Column(
-          children:  [
+          children: [
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => GetApiTutorials()));
               },
               child: const ListTile(
@@ -51,10 +43,8 @@ class _HomScreenState extends State<HomScreen> {
               ),
             ),
             GestureDetector(
-              onTap: (){
-
+              onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => PostApiScreen()));
-
               },
               child: const ListTile(
                 leading: CircleAvatar(
@@ -67,10 +57,8 @@ class _HomScreenState extends State<HomScreen> {
               ),
             ),
             GestureDetector(
-              onTap: (){
-
+              onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => DropDownApi()));
-
               },
               child: const ListTile(
                 leading: CircleAvatar(
@@ -82,12 +70,9 @@ class _HomScreenState extends State<HomScreen> {
                 trailing: Icon(Icons.arrow_forward),
               ),
             )
-
           ],
         ),
       ),
     );
   }
 }
-
-

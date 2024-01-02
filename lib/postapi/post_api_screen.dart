@@ -1,5 +1,5 @@
 import 'package:apitutorials/getapi/get_api_screen.dart';
-import 'package:apitutorials/signup.dart';
+import 'package:apitutorials/signin.dart';
 import 'package:apitutorials/upload_image.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +26,7 @@ class _PostApiScreenState extends State<PostApiScreen> {
               title: 'Login & SignUp',
               subTitle: 'Login and sign up api integration using open source api',
               onPress: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignIn()));
               },
             ),
             ReusableWidget(

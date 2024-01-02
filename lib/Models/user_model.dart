@@ -9,14 +9,15 @@
 
 class UserModel {
   UserModel({
-      int? id, 
-      String? name, 
-      String? username, 
-      String? email, 
-      Address? address, 
-      String? phone, 
-      String? website, 
-      Company? company,}){
+    int? id,
+    String? name,
+    String? username,
+    String? email,
+    Address? address,
+    String? phone,
+    String? website,
+    Company? company,
+  }) {
     _id = id;
     _name = name;
     _username = username;
@@ -25,7 +26,7 @@ class UserModel {
     _phone = phone;
     _website = website;
     _company = company;
-}
+  }
 
   UserModel.fromJson(dynamic json) {
     _id = json['id'];
@@ -71,7 +72,6 @@ class UserModel {
     }
     return map;
   }
-
 }
 
 /// name : "Romaguera-Crona"
@@ -80,13 +80,14 @@ class UserModel {
 
 class Company {
   Company({
-      String? name, 
-      String? catchPhrase, 
-      String? bs,}){
+    String? name,
+    String? catchPhrase,
+    String? bs,
+  }) {
     _name = name;
     _catchPhrase = catchPhrase;
     _bs = bs;
-}
+  }
 
   Company.fromJson(dynamic json) {
     _name = json['name'];
@@ -108,7 +109,6 @@ class Company {
     map['bs'] = _bs;
     return map;
   }
-
 }
 
 /// street : "Kulas Light"
@@ -119,17 +119,18 @@ class Company {
 
 class Address {
   Address({
-      String? street, 
-      String? suite, 
-      String? city, 
-      String? zipcode, 
-      Geo? geo,}){
+    String? street,
+    String? suite,
+    String? city,
+    String? zipcode,
+    Geo? geo,
+  }) {
     _street = street;
     _suite = suite;
     _city = city;
     _zipcode = zipcode;
     _geo = geo;
-}
+  }
 
   Address.fromJson(dynamic json) {
     _street = json['street'];
@@ -161,7 +162,6 @@ class Address {
     }
     return map;
   }
-
 }
 
 /// lat : "-37.3159"
@@ -169,11 +169,12 @@ class Address {
 
 class Geo {
   Geo({
-      String? lat, 
-      String? lng,}){
+    String? lat,
+    String? lng,
+  }) {
     _lat = lat;
     _lng = lng;
-}
+  }
 
   Geo.fromJson(dynamic json) {
     _lat = json['lat'];
@@ -191,5 +192,4 @@ class Geo {
     map['lng'] = _lng;
     return map;
   }
-
 }
