@@ -1,22 +1,6 @@
-import 'package:apitutorials/signin.dart';
+import 'package:apitutorials/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: const BottomNavBar(),
-    );
-  }
-}
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({Key? key}) : super(key: key);
@@ -25,10 +9,10 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> _buildScreens() {
       return [
-        const Screen1(),
+        const HomScreen(),
         const Screen2(),
         const Screen4(),
-        const SignIn(),
+        const HomScreen(),
       ];
     }
 

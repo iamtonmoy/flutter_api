@@ -1,3 +1,4 @@
+import 'package:apitutorials/bottom_navigation.dart';
 import 'package:apitutorials/provider/authProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,6 +27,15 @@ class _SignInState extends State<SignIn> {
         emailController.text,
         passwordController.text,
         universityUuid,
+      );
+
+      // Add a delay of 2 seconds before navigating to the HomeScreen
+      await Future.delayed(Duration(seconds: 2));
+
+      // Navigate to HomeScreen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => BottomNavBar()),
       );
     }
   }
@@ -123,7 +133,7 @@ class _SignInState extends State<SignIn> {
               validator: (value) {
                 if (value == value!.isEmpty && submitClicked) {
                   return 'Email is required';
-                } else if (value!.isEmpty && !_isValidEmail(value) && submitClicked) {
+                } else if (value!.isEmpty || !_isValidEmail(value) && submitClicked) {
                   return 'Enter a valid email address';
                 }
                 return null;
